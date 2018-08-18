@@ -1,0 +1,25 @@
+
+.header-bg {
+  background-color: #f7f9fc;
+  height: 50px;
+  display: flex
+}
+
+.flex {
+    display:flex
+}
+
+.header-position {
+    position: absolute;
+    left: 10%;
+}
+
+.twitter-icon-style {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+
