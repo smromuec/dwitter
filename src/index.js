@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Profile from './Profile';
 import registerServiceWorker from './registerServiceWorker';
+import * as Messages from './core/UIMessages';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Profile />, document.getElementById('root'));
 registerServiceWorker();
