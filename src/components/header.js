@@ -7,21 +7,53 @@ import * as Messages from './../core/UIMessages';
 
 
 class Header extends Component {
+
+    constructor() {
+        super();
+        this.state = {selected: Constants.HOME};
+        this.updateSelection = this.updateSelection.bind(this);
+    }
+
+    updateSelection(e) {
+        if (e.target.id)
+            this.setState({selected: e.target.id});
+    }
     render() {
+        var menuItems = Constants.MENU_ITEMS;
+        console.log("Refreshed + " + this.state.selected);
+        let twitterSkyBlueStyle = {"color": Constants.SKY_BLUE_COLOR, "textAlign": "center"};
+        let leftSideStyle = {"width": "45%"};
+        let iconWidth = {"width": "10%"};
+        let rightSideStyle = {"width": "45%", "textAlign": "center"};
+        let searchIconStyle = {"margin": "15px"};
+        let tweetButtonStyle = {"backgroundColor" : "brown", "color" : "white", "textAlign" : "center"};
         return (
                 <div className="header-bg" >
-                    <div className="flex header-position">
-                        <HeaderButtonItem profileData="dummyProfile" icon="fa fa-home" title={Messages.HOME} msg={Messages.HOME} />
-                        <HeaderButtonItem profileData="dummyProfile" icon="fa fa-bolt" title={Messages.MOMENTS} msg={Messages.MOMENTS}/>
-                        <HeaderButtonItem profileData="dummyProfile" icon="fa fa-bell" title={Messages.NOTIF} msg={Messages.NOTIF} />
-                        <HeaderButtonItem profileData="dummyProfile" icon="fa fa-envelope" title={Messages.MESSAGES} msg={Messages.MESSAGES}/>
+                    <div style={leftSideStyle}>
+                        <div className="flex">
+                            {menuItems.map(function (object, i) {
+                                            return <HeaderButtonItem 
+                                                data={object} 
+                                                key={i}
+                                                selected={this.state.selected}
+                                                update={this.updateSelection} />;
+                            }, this)}
+                        </div>
                     </div>
-                    <div className="twitter-icon-style">
-                    <i className="fab fa-twitter fa-1x" alt={Messages.TITLE}/>
+                    <div className="twitter-icon-style" style={iconWidth}>
+                        <i className="fab fa-twitter fa-1x" alt={Messages.TITLE} title={Messages.TITLE} style={twitterSkyBlueStyle}/>
+                    </div>
+                    <div style={rightSideStyle} className="flex">
+                        <input className="search-box-style" 
+                               type="text"  placeholder={Messages.SEARCH_BOX} 
+                               autoComplete="off"/>
+                        <i className="fa fa-search fa-1x" style={searchIconStyle}/>
+                        <img src="../twitter-image.jpeg" alt={Messages.AV} title={Messages.AV} className="avatar-img-style"/>
+                        <div className="tweet-box-style" style={tweetButtonStyle}>Tweet</div>
+                    </div>
                 </div>
-                </div>
-                );
-    }
-}
+                            );
+            }
+        }
 
-export{ Header};
+        export{ Header};
