@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Profile from './Profile';
+import Base from './base';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Profile />, document.getElementById('root'));
+ReactDOM.render(<Base />, document.getElementById('root'));
 registerServiceWorker();

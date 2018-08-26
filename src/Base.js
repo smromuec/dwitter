@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-import {Header} from './components/header';
+import {BasePage} from './components/basePage';
 import * as Messages from './core/UIMessages';
 
-class Profile extends Component {
+class Base extends Component {
     componentDidMount() {
         document.title = Messages.TITLE;
     }
 
     render() {
         return (
-                <Header/>
+                <BasePage/>
                 );
     }
 }
 
-export default Profile;
+export default Base;

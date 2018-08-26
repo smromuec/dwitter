@@ -20,3 +20,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /nbproject/
+/API/DwitterAPI/CalculatorClientApp/nbproject/private/
+/API/DwitterAPI/CalculatorApp/nbproject/private/
+/API/DwitterAPI/CalculatorClientApp/build/
+/API/DwitterAPI/nbproject/private/
+/API/DwitterAPI/dist/
+/API/DwitterAPI/build/
